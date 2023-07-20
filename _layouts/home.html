@@ -4,13 +4,57 @@ layout: default
 
 <div class="row g-5 mb-5">
   <div class="col-md-6">
-    <h3 class="fw-bold">Research</h3>
+    <h3 class="fw-bold">CAREER PROFILE</h3>
     {{ content }}
   </div>
   <div class="col-md-6">
     <img src="{{ site.github.url }}/assets/img/home.jpg" alt="Home" width="100%">
   </div>
 </div>
+
+<div class="row g-5 mb-5">
+  <div>
+    <h3 class="fw-bold border-bottom pb-3 mb-5">CAREER</h3>
+    <div class="row g-5 mb-5">
+      <div class="col-md-2">
+          <h4>Job Experience</h4>
+        </div>
+        <div class="col-md-10">
+          {% for section in site.data.cv.job-experience %}
+            <p class="fw-bold">{{ section.title }}</p>
+            <p>{{ section.description }}</p>
+      
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row g-5 mb-5">
+      <div class="col-md-2">
+        <h4>Education</h4>
+      </div>
+      <div class="col-md-10">
+        {% for section in site.data.cv.education %}
+          <p class="fw-bold">{{ section.title }}</p>
+          <p>{{ section.description }}<a href="{{ section.link }}">{{ section.description2 }}</a></p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 class="fw-bold border-bottom pb-3 mb-5">Projects</h3>
+{% for project in site.data.settings.projects %}
+<div class="row g-5 mb-5">
+  <div class="col-md-6">
+    <h5>{{ project.name }}</h5>
+    <p>{{ project.company_and_date }}</p>
+    <p>{{ project.description }}</p>
+    <p><a href="{{ site.github.url }}/people/{{ project.url }}">More info</a></p>
+  </div>
+  <div class="col-md-6">
+    <img src="{{ site.github.url }}/{{ project.image }}" alt="Contact" width="100%">
+  </div>
+</div>
+{% endfor %}
 
 {% include publications.html %}
 

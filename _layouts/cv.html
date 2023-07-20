@@ -9,23 +9,24 @@ layout: default
     <h3 class="fw-bold border-bottom pb-3 mb-5">CV</h3>
     <div class="row g-5 mb-5">
       <div class="col-md-2">
-        <h4>Education</h4>
-      </div>
-      <div class="col-md-10">
-        {% for section in site.data.cv.education %}
-          <p class="fw-bold">{{ section.title }}</p>
-          <p>{{ section.description }}</p>
+          <h4>Academic Experience</h4>
+        </div>
+        <div class="col-md-10">
+          {% for section in site.data.cv.job-experience %}
+            <p class="fw-bold">{{ section.title }}</p>
+            <p>{{ section.description }}</p>
+      
         {% endfor %}
       </div>
     </div>
     <div class="row g-5 mb-5">
       <div class="col-md-2">
-        <h4>Academic Experience</h4>
+        <h4>Education</h4>
       </div>
       <div class="col-md-10">
-        {% for section in site.data.cv.academic-experience %}
+        {% for section in site.data.cv.education %}
           <p class="fw-bold">{{ section.title }}</p>
-          <p>{{ section.description }}</p>
+          <p>{{ section.description }}<a href="{{ section.link }}">{{ section.description2 }}</a></p>
         {% endfor %}
       </div>
     </div>

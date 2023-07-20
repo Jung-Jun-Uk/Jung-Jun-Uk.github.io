@@ -1,14 +1,18 @@
 menu:
-- {name: 'people', url: '/people'}
-- {name: 'publications', url: '/publications'}
-- {name: 'courses', url: '/courses'}
-- {name: 'cv', url: '/cv'}
-- {name: 'contact', url: '/contact'}
+#- {name: 'people', url: '/people'}
+#- {name: 'publications', url: '/publications'}
+#- {name: 'courses', url: '/courses'}
+#- {name: 'cv', url: '/cv'}
+#- {name: 'contact', url: '/contact'}
 
-people:
-- {name: 'Primary Investigator', title: 'Researcher', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/primary-investigator.jpg', url: 'primary-investigator'}
-- {name: 'Lab Technician', title: 'Researcher', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/lab-technician.jpg', url: 'lab-technician'}
-- {name: 'Graduate Student', title: 'Researcher', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/graduate-student.jpg', url: 'graduate-student'}
+projects:
+- {name: 'Unseen Object Detection', 
+   company_and_date: 'ARBEON (알비언), 2022.12 - present', 
+   description: "Multi-model (image-text pair)을 활용하여 한번도 보지 못한 세상의 모든 객체를 검출하는 object detection model 개발. 
+    온디바이스 (andorid, ios) 포팅 및 데모 앱 개발. 안드로이드 유저를 위한 초 경량화 object detection model 개발: galax s22 기준 R@1 정확도 95% 이상, inference time 12mes 달성.
+    아이폰 플래그쉽 유저를 위한 고도화된 object detection model 개발 Segment Anything Model 의 points embedding 에서 영감을 얻어",
+   department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/primary-investigator.jpg', url: 'primary-investigator'}
+
 
 courses:
 - {name: 'Vector Calculus', url: 'vector-calculus'}
