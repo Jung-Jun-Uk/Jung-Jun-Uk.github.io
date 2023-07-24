@@ -8,7 +8,7 @@ layout: default
     {{ content }}
   </div>
   <div class="col-md-6">
-    <img src="{{ site.github.url }}/assets/img/home.jpg" alt="Home" width="100%">
+    <img src="{{ site.github.url }}/assets/img/profile.jpg" alt="Home" width="100%">
   </div>
 </div>
 
@@ -41,28 +41,77 @@ layout: default
   </div>
 </div>
 
-<h3 class="fw-bold border-bottom pb-3 mb-5">Projects</h3>
+<h3 class="fw-bold border-bottom pb-3 mb-6">Projects</h3>
 {% for project in site.data.settings.projects %}
 <div class="row g-5 mb-5">
   <div class="col-md-6">
-    <h5>{{ project.name }}</h5>
-    <p>{{ project.company_and_date }}</p>
-    <p>{{ project.description }}</p>
-    <p><a href="{{ site.github.url }}/people/{{ project.url }}">More info</a></p>
+    <h5>{{ project.name | markdownify}}</h5>
+    <p>{{ project.company_and_date | markdownify }}</p>
+    {% if project.description %}
+    <p>{{ project.description | markdownify }}</p>
+    {% endif %}
+    {% if project.description2 %}
+    <p>{{ project.description2 | markdownify }}</p>
+    {% endif %}
+    {% if project.description3 %}
+    <p>{{ project.description3 | markdownify }}</p>
+    {% endif %}
+    <p>{{ project.keyword | markdownify }}</p>
+    <p>{{ project.skills | markdownify }}</p>
+    {% if project.url %}
+    <p><a href="{{ site.github.url }}/projects/{{ project.url }}">More info</a></p>    
+    {% endif %}    
+    <p>
+    {% if project.poster_url %}    
+      <a href="{{ project.poster_url }}">[poster]</a>            
+    {% endif %}                
+    {% if project.paper_url %}    
+      <a href="{{ project.paper_url }}">[paper]</a>            
+    {% endif %}        
+    {% if project.paper_url2 %}    
+      <a href="{{ project.paper_url2 }}">[paper2]</a>            
+    {% endif %}
+    {% if project.code_url %}          
+      <a href="{{ project.code_url }}">[code]</a>    
+    {% endif %}        
+    {% if project.leaderbord %}          
+      <a href="{{ project.leaderbord }}">[leaderbord]</a>    
+    {% endif %}        
+  </p>
+  </div>  
+  {% if project.image %}
+  <div class="col-md-6">     
+    <img src="{{ site.github.url }}/{{ project.image }}" alt="Contact" width="100%">    
   </div>
-  <div class="col-md-6">
-    <img src="{{ site.github.url }}/{{ project.image }}" alt="Contact" width="100%">
+  {% endif %}
+  {% if project.pdf %}
+  <div class="col-md-6">     
+    <iframe src="{{ site.github.url }}/{{ project.pdf }}" width="100%" height="500px"></iframe>
   </div>
+  {% endif %}
+  {% if project.image3 %}
+  <div class="col-md-2">
+    <img src="{{ site.github.url }}/{{ project.image3 }}" alt="Contact" width="100%">
+  </div>
+  <div class="col-md-2">    
+    <img src="{{ site.github.url }}/{{ project.image3 }}" alt="Contact" width="100%">
+    <h6>Multi-Model (Android)</h6>
+  </div>
+  <div class="col-md-2">
+    <img src="{{ site.github.url }}/{{ project.image3 }}" alt="Contact" width="100%">
+  </div>  
+  {% endif %}  
 </div>
 {% endfor %}
 
 {% include publications.html %}
 
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
-    <h3 class="fw-bold border-bottom pb-3 mb-5">Updates</h3>
-    {% for post in site.posts %}
-      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% endfor %}
-  </div>
-</div>
+<h3 class="fw-bold border-bottom pb-3 mb-6">Skills</h3>
+{% for skill in site.data.settings.skills %}
+<h5>{{ skill.category1 | markdownify}}</h5>
+<p>{{ skill.description1 | markdownify }}</p>
+<h5>{{ skill.category2 | markdownify}}</h5>
+<p>{{ skill.description2 | markdownify }}</p>
+<h5>{{ skill.category3 | markdownify}}</h5>
+<p>{{ skill.description3 | markdownify }}</p>
+{% endfor %}

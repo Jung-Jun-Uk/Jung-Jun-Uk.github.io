@@ -6,18 +6,89 @@ menu:
 #- {name: 'contact', url: '/contact'}
 
 projects:
-- {name: 'Unseen Object Detection', 
+- {name: '**Unseen Object Detection**', 
    company_and_date: 'ARBEON (알비언), 2022.12 - present', 
-   description: "Multi-model (image-text pair)을 활용하여 한번도 보지 못한 세상의 모든 객체를 검출하는 object detection model 개발. 
-    온디바이스 (andorid, ios) 포팅 및 데모 앱 개발. 안드로이드 유저를 위한 초 경량화 object detection model 개발: galax s22 기준 R@1 정확도 95% 이상, inference time 12mes 달성.
-    아이폰 플래그쉽 유저를 위한 고도화된 object detection model 개발 Segment Anything Model 의 points embedding 에서 영감을 얻어",
-   department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/primary-investigator.jpg', url: 'primary-investigator'}
+   description: 
+      "**목표**: 한번도 보지못한 세상의 모든 객체를 검출할 수 있는 모델 개발. 
+       동시에 온디바이스 (Android, iOS)에서 50msec 이하의 속도를 가지는 객체 검출 모델 개발.",
+   description2:
+      "**결과**: 성능과 속도간 trade-off가 존재하는 3 가지 타입의 모바일용 모델 개발.",
+   description3:
+      "**성과**: 기존 모델을 개발한 모델로 대체함. 자체 테스트 데이터셋에서 기존 객체 검출 모델: Top1 정확도 87%, 개발한 모델: Top1 정확도 98.8%",   
+   keyword: "**Keyword**: Multi-model object detection (image-text pair), Segment Anything Model, Efficient Object Detection",         
+   image3: 'assets/img/android_multi_model_object_detection.gif', url: 'arbeonod'}
 
+- {name: '**Unified Negative Pair Generation toward Well-discriminative Feature Space for Face Recognition@BMVC''2022**', 
+   company_and_date: "**J.U. Jung**, S.H. Lee, H.S. Oh, Y.J. Park, J.C. Park, and S.B. Son.", 
+   description: "This paper proposes a unified negative pair generation (UNPG) by combining two PG strategies (i.e., MLPG and CLPG) from a unified perspective to alleviate the mismatch. UNPG introduces useful information about negative pairs using MLPG to overcome the CLPG deficiency. Moreover, it includes filtering the similarities of noisy negative pairs to guarantee reliable convergence and improved performance. Exhaustive experiments show the superiority of UNPG by achieving state-of-the-art performance across recent loss functions on public benchmark datasets.",
+   description2: "[Ranked #1 on Face Identification on MegaFace](https://paperswithcode.com/paper/unified-negative-pair-generation-toward-well)",
+   keyword: "**Keyword**: Metric Learning, Face Recognition",         
+   pdf: 'assets/img/0421_poster.pdf',
+   poster_url: "https://bmvc2022.mpi-inf.mpg.de/421",
+   paper_url: "https://arxiv.org/abs/2203.11593",
+   code_url: "https://github.com/Jung-Jun-Uk/UNPG",   
+   }
 
-courses:
-- {name: 'Vector Calculus', url: 'vector-calculus'}
-- {name: 'Quantum Mechanics', url: 'quantum-mechanics'}
-- {name: 'Stellar Structures', url: 'stellar-structures'}
+- {name: '**자가학습 기반 실시간 MLCC 적층 자동 검사 통합시스템 개발**', 
+   company_and_date: "ICT 바우처 지원 사업, 과학기술정보통신부 (ICT), (주) 삼성기전, 2021.12 - 2022.08", 
+   description: 
+   "**목표**: MLCC (Multi-Layer Ceramic Capacitor)의 적층이 잘 쌓여져있는지 여부를 사람이 목시 검사로 수행하고 있음. 
+    해당 검사 공정을 자동화시키는 시스템 개발.",
+   description2:
+   "**결과**: AI developer로써 적층 검출 모델, 적층 세그멘테이션 모델, 마진 검출 알고리즘 개발 후 
+    적층 이미지로부터 최종 양불판정까지 end-to-end로 동작하는 시스템 개발. PM으로써 스케쥴링 담당, 프론트엔드 & 백엔드 개발자들과 연계하여 웹 프로토 타입 시스템을 구축", 
+   description3: "**성과**: 제안서 상 85% 정확도 대비 98%의 최종 양불 검출 정확도 달성. 적층 양불판정 검사 인원 보조용으로써 삼성전기 공장 시험가동 운행.",
+   keyword: "**Keyword**: Object Detection, Semantic Segmentation",         
+   image: 'assets/img/MLCC.png',   
+   paper_url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002856842",   
+   paper_url2: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002884720",   
+   }
+
+- {name: '**다중 CCTV를 이용한 감염병 대응 시스템 개발**', 
+   company_and_date: "한국과학기술연구원 (KIST), 2021.04 - 2021.11", 
+   description: "**목표**: COVID-19 와 같은 감염병 대응을 위해 마스크 착용 여부와 사회적 거리 측정을 통한 실시간 위험도 평가 및 방역대상 추적 시스템 개발",
+   description2: "**결과**: [Yolov5](https://github.com/ultralytics/yolov5) + [RetinaFace](https://arxiv.org/abs/1905.00641)를 활용한 마스크 착용 여부 탐지기 개발. 자세 추정을 통한 사회적 거리 측정, 얼굴로부터 마스크 검출, 방역수칙 시각화를 통합한 프로토 타입 데모를 개발.",
+   description3: "**성과**: 마스크 검출 성능 [baseline model](https://www.mdpi.com/2079-9292/10/7/837) 대비 mAP 약 2% 향상. ",
+   keyword: "**Keyword**: 3D Pedestrian Localization, Social Distance, Masked Face Detection, Object Tracking",         
+   image: 'assets/img/monitoring.png',   
+   paper_url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002864253",   
+   }
+
+- {name: '**위성 이미지 객체 검출 경진대회 1위, 방위사업청장상 수상**', 
+   company_and_date: "국방과학연구소, 방위사업청, [데이콘](https://dacon.io/), 2020.08 - 2020.11", 
+   description: "**기여점**: Patch based multi-scale augmentation 알고리즘 train 및 test 모두 적용과 
+   기존 Neck인 [FPN](https://arxiv.org/abs/1612.03144) 모듈에 [Libra R-CNN](https://arxiv.org/abs/1904.02701)의 balanced feature pyramid 추가를 통해 public score 2등 기여.
+   코드가 공개되어 있지 않은 당시 paper with code의 COCO object detection 1위 모델인 [CBNet](https://arxiv.org/abs/1909.03625) 백본 구현을 통한 public score 1등 기여. 
+   ",   
+   keyword: "**Keyword**: Object Detection In Aerial Images",         
+   image: 'assets/img/EO_challenge.jpg',    
+   paper_url: "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002643994",   
+   leaderbord: "https://dacon.io/competitions/official/235492/leaderboard",
+   }
+
+- {name: '**MixFace: Improving Face Verification Focusing on Fine-grained Conditions**', 
+   company_and_date: "**J.U. Jung**, S.B. Son, J.C. Park, Y.J. Park, S.H. Lee, and H.S. Oh.", 
+   description: "The performance of face recognition (FR) has become saturated for public benchmark datasets such as LFW, CFP-FP, and AgeDB, owing to the rapid advances
+   in CNNs. However, the effects of faces with various fine-grained conditions on
+   FR models have not been investigated because of the absence of such datasets.
+   This paper analyzes their effects in terms of different conditions and loss functions
+   using K-FACE, a recently introduced FR dataset with fine-grained conditions. We
+   propose a novel loss function, MixFace, that combines classification and metric
+   losses. The superiority of MixFace in terms of effectiveness and robustness is
+   demonstrated experimentally on various benchmark datasets.",   
+   keyword: "**Keyword**: Face Detection, Face Recognition",         
+   image: 'assets/img/roc_curve_final.png',    
+   paper_url: "https://arxiv.org/abs/2111.01717",   
+   }
+
+- {name: '**국가혁신클러스터사업 (R&D) 한국인 얼굴인식 기술 개발**', 
+   company_and_date: "라온솔루션, 2019.01 - 2020.12", 
+   description: "**목표**: 한국인 얼굴 검출기, 얼굴 인식기 개발. 안드로이드용 앱 데모 개발.",
+   description2: "**결과**: AI-hub에서 제공되는 [한국인 얼굴 인식 데이터 셋](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=83) 사용. [MTCNN]()을 활용한 얼굴 검출기 개발, [ResNet](https://arxiv.org/abs/1512.03385) + [ArcFace](https://arxiv.org/abs/1801.07698)를 활용한 얼굴 인식기 개발.
+   얼굴 검출부터 얼굴 인식 후 사전에 갤러리에 저장된 얼굴과의 유사도를 통한 동일 얼굴 유무 판단까지 동작하는 안드로이드 앱 데모 개발.",
+   keyword: "**Keyword**: Face Detection, Face Recognition",         
+   image: 'assets/img/kface_pj.png',    
+   }
 
 social:
 - {icon: 'github', link: 'https://github.com/LeNPaul'}
@@ -25,5 +96,20 @@ social:
 - {icon: 'instagram', link: 'https://instagram.com/paululele'}
 - {icon: 'linkedin', link: 'https://linkedin.com/in/lenpaul'}
 
-contacts:
-- {name: 'Dr. Academia', title: 'Professor', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/contact.jpg'}
+skills:
+- {category1: '**Programming**',
+   description1:
+   "- **Strong**: Python, Pytorch
+      
+    - **Knowledgeable**: Android, Swift, C/C++, Java,
+   ",
+   category2: '**Knowledge**',
+   description2: 
+   "
+   - Deep Learning, Machine Learning
+
+   - Multi-Model Object Detection & Segmentation, Metric Learning, Face Recognition, Image Retrieval
+   ",   
+   category3: '**Etc.**',
+   description3: '- Ubuntu, Git, Github/GitLab, Jira, Notion, slack'
+   }
