@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gem install "academic-jekyll-theme"
+gem "academic-jekyll-theme"
