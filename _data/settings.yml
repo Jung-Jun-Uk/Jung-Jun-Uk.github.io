@@ -2,8 +2,8 @@ menu:
 #- {name: 'people', url: '/people'}
 #- {name: 'publications', url: '/publications'}
 #- {name: 'courses', url: '/courses'}
-#- {name: 'cv', url: '/cv'}
-#- {name: 'contact', url: '/contact'}
+# - {name: 'cv', url: '/cv'}
+# - {name: 'contact', url: '/contact'}
 
 projects:
 - {name: '**Unseen Object Detection**', 
@@ -16,7 +16,11 @@ projects:
    description3:
       "**성과**: 기존 모델을 개발한 모델로 대체함. 자체 테스트 데이터셋에서 기존 객체 검출 모델: Top1 정확도 87%, 개발한 모델: Top1 정확도 98.8%",   
    keyword: "**Keyword**: Multi-model object detection (image-text pair), Segment Anything Model, Efficient Object Detection",         
-   image3: 'assets/img/android_multi_model_object_detection.gif', url: 'arbeonod'}
+   image3: 'https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/unseenod_android.gif',
+   image3_2: 'https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/unseenod_ios.gif',    
+   image3_3: 'https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/unseenod_ios_large.gif',    
+   url: 'arbeonod'}
+   
 
 - {name: '**Unified Negative Pair Generation toward Well-discriminative Feature Space for Face Recognition@BMVC''2022**', 
    company_and_date: "**J.U. Jung**, S.H. Lee, H.S. Oh, Y.J. Park, J.C. Park, and S.B. Son.", 
@@ -90,12 +94,6 @@ projects:
    image: 'assets/img/kface_pj.png',    
    }
 
-social:
-- {icon: 'github', link: 'https://github.com/LeNPaul'}
-- {icon: 'twitter', link: 'https://twitter.com/paululele'}
-- {icon: 'instagram', link: 'https://instagram.com/paululele'}
-- {icon: 'linkedin', link: 'https://linkedin.com/in/lenpaul'}
-
 skills:
 - {category1: '**Programming**',
    description1:
@@ -113,3 +111,12 @@ skills:
    category3: '**Etc.**',
    description3: '- Ubuntu, Git, Github/GitLab, Jira, Notion, slack'
    }
+
+contacts:
+   - {email: 'rnans33@gmail.com', phone: '010-8990-7599'}
+
+social:
+- {icon: 'github', link: 'https://github.com/Jung-Jun-Uk'}
+# - {icon: 'mail', link: 'https://twitter.com/paululele'}
+# - {icon: 'instagram', link: 'https://instagram.com/paululele'}
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/junuk-jung-90b902180'}
