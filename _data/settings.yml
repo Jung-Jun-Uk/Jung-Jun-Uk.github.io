@@ -12,7 +12,15 @@ projects:
       "**목표**: 한번도 보지못한 세상의 모든 객체를 검출할 수 있는 모델 개발. 
        동시에 온디바이스 (Android, iOS)에서 50msec 이하의 속도를 가지는 객체 검출 모델 개발.",
    description2:
-      "**결과**: 성능과 속도간 trade-off가 존재하는 3 가지 타입의 모바일용 모델 개발.",
+      "**결과**: 성능과 속도간 trade-off가 존재하는 3 가지 타입의 모바일용 모델 개발.
+       
+      - **안드로이드용 모델**: **12ms** 와 **90.28% Top1 정확도** 
+      
+      - **iOS 용 모델**: **20ms** 와 **97.12% Top1 정확도**
+
+      - **iOS 용 모델 (with points)**: **43ms** 와 **98.44% Top1 정확도**
+
+      ",
    description3:
       "**성과**: 기존 모델을 개발한 모델로 대체함. 자체 테스트 데이터셋에서 기존 객체 검출 모델: Top1 정확도 87%, 개발한 모델: Top1 정확도 98.8%",   
    keyword: "**Keyword**: Multi-model object detection (image-text pair), Segment Anything Model, Efficient Object Detection",         
