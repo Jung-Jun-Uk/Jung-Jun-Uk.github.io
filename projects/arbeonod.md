@@ -29,7 +29,7 @@ title: "Unseen Object Detection"
 ##### **안드로이드용 Unseen Object Detection 초 경량화 및 포팅, Android 앱 데모 구현 (2022-03-21 ~ 2023-04-19)**
  동일모델이라도 안드로이드는 아이폰 보다 훨씬 속도가 느렸습니다 (아이폰 30ms, 안드로이드 400ms). 동시에 발열 문제도 있었습니다. 안드로이드 최적화의 핵심은 uint8 quantization과 [NNAPI](https://developer.android.com/ndk/guides/neuralnetworks?hl=ko) 입니다. 문제는 아이폰과 달리 안드로이드는 multi-head attention의 BatchMatMul을 NNAPI가 지원하지 않기 때문에 개발했던 모델을 제대로 적용 할 수 없었습니다. 이를 해결하기 위해 uint8 quantization과 NNAPI 사용 가능하도록 모델 구조를 변경하였습니다. 또한 약간의 성능 하락을 감수하고 모델을 좀 더 경량화 진행하였습니다. 그 결과 Galaxy s22 에서 **12ms** 와 **90.28% Top1 정확도**를 달성하였습니다.
  
- - onnx2tf를 활용한 모델 포팅
+ - pytorch -> onnx -> tflite 모델 포팅
  - uint8 & NNAPI 사용을 위한 모델 경량화 및 구조 변경 
  - Android 앱 데모 개발
 

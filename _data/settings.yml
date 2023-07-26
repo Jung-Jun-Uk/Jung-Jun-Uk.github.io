@@ -117,7 +117,7 @@ skills:
    - Multi-Model Object Detection & Segmentation, Metric Learning, Face Recognition, Image Retrieval
    ",   
    category3: '**Etc.**',
-   description3: '- Ubuntu, Git, Github/GitLab, Jira, Notion, slack'
+   description3: '- Ubuntu, Git, Github/GitLab, Docker, Jira, Notion, slack'
    }
 
 contacts:
