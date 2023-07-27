@@ -27,16 +27,27 @@ title: "Unseen Object Detection"
  - 패키지 라이브러리 배포
 
 ##### **안드로이드용 Unseen Object Detection 초 경량화 및 포팅, Android 앱 데모 구현 (2022-03-21 ~ 2023-04-19)**
- 동일모델이라도 안드로이드는 아이폰 보다 훨씬 속도가 느렸습니다 (아이폰 30ms, 안드로이드 400ms). 동시에 발열 문제도 있었습니다. 안드로이드 최적화의 핵심은 uint8 quantization과 [NNAPI](https://developer.android.com/ndk/guides/neuralnetworks?hl=ko) 입니다. 문제는 아이폰과 달리 안드로이드는 multi-head attention의 BatchMatMul을 NNAPI가 지원하지 않기 때문에 개발했던 모델을 제대로 적용 할 수 없었습니다. 이를 해결하기 위해 uint8 quantization과 NNAPI 사용 가능하도록 모델 구조를 변경하였습니다. 또한 약간의 성능 하락을 감수하고 모델을 좀 더 경량화 진행하였습니다. 그 결과 Galaxy s22 에서 **12ms** 와 **90.28% Top1 정확도**를 달성하였습니다.
+ 동일모델이라도 안드로이드는 아이폰 보다 훨씬 속도가 느렸습니다 (아이폰 30ms, 안드로이드 400ms). 동시에 발열 문제도 있었습니다. 안드로이드 최적화의 핵심은 uint8 quantization과 [NNAPI](https://developer.android.com/ndk/guides/neuralnetworks?hl=ko) 입니다. 문제는 아이폰과 달리 안드로이드는 multi-head attention의 BatchMatMul을 NNAPI가 지원하지 않기 때문에 개발했던 모델을 제대로 적용 할 수 없었습니다. 이를 해결하기 위해 uint8 quantization과 NNAPI 사용 가능하도록 모델 구조를 변경하였습니다. 또한 약간의 성능 하락을 감수하고 모델을 좀 더 경량화 진행하였습니다. 그 결과 Galaxy s22 에서 **12ms** 와 **95.54% Top1 정확도**를 달성하였습니다.
  
  - pytorch -> onnx -> tflite 모델 포팅
  - uint8 & NNAPI 사용을 위한 모델 경량화 및 구조 변경 
  - Android 앱 데모 개발
 
 ##### **Points를 활용한 Unseen Object Detection 모델 고도화 (2022-04-20 ~ 2023-07-18)**
- 기존 모델의 동작 방식은 모든 객체를 검출한 후 Top1 알고리즘을 통해 가장 적합한 1개의 객체를 검출하게 됩니다. 문제는 객체를 검출했음에도 불구하고 Top1 알고리즘을 통과할 때 사용자가 원하는 객체를 리턴하지 않아 급격한 성능하락이 발생합니다. [Segment Anything Model](https://arxiv.org/abs/2304.02643)의 points embedding에 영감을 얻어 새로운 모델과 학습 전략을 개발 하였습니다. 그 결과 iPhone 13 Pro에서 **43ms** 와 **98.44% Top1 정확도**를 달성하였습니다. 
+ 기존 모델의 동작 방식은 모든 객체를 검출한 후 Top1 알고리즘을 통해 가장 적합한 1개의 객체를 검출하게 됩니다. 문제는 객체를 검출했음에도 불구하고 Top1 알고리즘을 통과할 때 사용자가 원하는 객체를 리턴하지 않아 급격한 성능하락이 발생합니다. [Segment Anything Model](https://arxiv.org/abs/2304.02643)의 points embedding에 영감을 얻어 새로운 모델과 학습 전략을 개발 하였습니다. 그 결과 iPhone 13 Pro에서 **43ms** 와 **98.10% Top1 정확도**를 달성하였습니다. 
 
  - Points를 활용한 Unseen Object Detection 고도화
+
+##### **Results**
+
+---Model---                                                               | ---mAR50-95--- | ---Top1 Accuracy (Conf:0.3, iou:50)--- | ---Speed---   |
+:-----------------------------------------------------------------: | :------:  | :------------------------------: | :---:   |
+[Class-agonstic yolov8n](https://github.com/ultralytics/ultralytics)| 0.4675    | 69.90                            | **10ms**|
+[google MLKit](https://developers.google.com/ml-kit?hl=ko)          | -         | 87.00                            | -       |
+Android용 multi-model (our)                                         | 0.6665    | 95.54                            | 12ms    | 
+ios용 multi-model (our)                                             | 0.7063    | 97.12                            | 20ms    | 
+ios용 multi-model with points (our)                                 | **0.7814**| **98.10**                        | 43ms    |
+
 
 ##### **Demo**
  - ultralytics/yolov8n (오픈소스): 한번도 보지 못한 객체는 검출하지 못함.
