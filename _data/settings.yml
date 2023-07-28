@@ -23,7 +23,7 @@ projects:
       ",
    description3:
       "**성과**: 기존 모델을 개발한 모델로 대체함. 자체 테스트 데이터셋에서 기존 객체 검출 모델: Top1 정확도 87%, 개발한 모델: Top1 정확도 98.8%",   
-   keyword: "**Keyword**: Multi-model object detection (image-text pair), Segment Anything Model, Efficient Object Detection",         
+   keyword: "**Keyword**: Multi-modal object detection (image-text pair), Segment Anything Model, Efficient Object Detection",         
    image3: 'https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/unseenod_android.gif',
    image3_2: 'https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/unseenod_ios.gif',    
    image3_3: 'https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/unseenod_ios_large.gif',    
@@ -114,7 +114,7 @@ skills:
    "
    - Deep Learning, Machine Learning
 
-   - Multi-Model Object Detection & Segmentation, Metric Learning, Face Recognition, Image Retrieval
+   - Multi-Modal Object Detection & Segmentation, Metric Learning, Face Recognition, Image Retrieval
    ",   
    category3: '**Etc.**',
    description3: '- Ubuntu, Git, Github/GitLab, Docker, Jira, Notion, slack'

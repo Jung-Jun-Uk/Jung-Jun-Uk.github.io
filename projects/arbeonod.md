@@ -15,11 +15,11 @@ title: "Unseen Object Detection"
  - Detect only one desired object: 검출된 모든 객체 중 사용자가 증강하길 원하는 단 하나의 객체를 리턴해야함.
 
 ##### **Unseen Object Detection 모델 개발 및 모바일 포팅, iOS 앱 데모 구현 (2022-12-05 ~ 2023-03-20)** 
- Multi-model baseline 모델을 테스트 후 효과성을 확인 한 후 이를 모바일에 동작할 수 있도록 가볍게 만들었습니다. iPhone 13 Pro 에서 **20ms**와 **97.12의 Top1 정확도** 를 달성하였습니다.
+ Multi-modal baseline 모델을 테스트 하고 효과성을 확인 한 후 이를 모바일에 동작할 수 있도록 경량화하였습니다. iPhone 13 Pro 에서 **20ms**와 **97.12의 Top1 정확도** 를 달성하였습니다.
 
  - 개발 방향성 계획 수립  
  - 회사 내 자체 테스트 데이터셋과 task에 알맞는 평가 프로토콜 개발
- - Image-text pair를 활용한 Multi-model object detection 모델 개발
+ - Image-text pair를 활용한 Multi-modal object detection 모델 개발
  - iOS에 동작 가능하도록 모델 경량화
  - coremltools 활용한 모델 포팅
  - iOS 앱 데모 개발 
@@ -44,16 +44,16 @@ title: "Unseen Object Detection"
 :-----------------------------------------------------------------: | :------:  | :------------------------------: | :---:   |
 [Class-agonstic yolov8n](https://github.com/ultralytics/ultralytics)| 0.4675    | 69.90                            | **10ms**|
 [google MLKit](https://developers.google.com/ml-kit?hl=ko)          | -         | 87.00                            | -       |
-Android용 multi-model (our)                                         | 0.6665    | 95.54                            | 12ms    | 
-ios용 multi-model (our)                                             | 0.7063    | 97.12                            | 20ms    | 
-ios용 multi-model with points (our)                                 | **0.7814**| **98.10**                        | 43ms    |
+Android용 multi-modal (our)                                         | 0.6665    | 95.54                            | 12ms    | 
+ios용 multi-modal (our)                                             | 0.7063    | 97.12                            | 20ms    | 
+ios용 multi-modal with points (our)                                 | **0.7814**| **98.10**                        | 43ms    |
 
 
 ##### **Demo**
  - ultralytics/yolov8n (오픈소스): 한번도 보지 못한 객체는 검출하지 못함.
- - Android용 multi-model (our): 객체 검출 시 노이즈 약간 존재, 
- - ios용 multi-model (our): 거의 모든 객체 검출
- - ios용 multi-model with points (our): Points를 활용한 정확하게 사용자가 원하는 하나의 객체 검출
+ - Android용 multi-modal (our): 객체 검출 시 노이즈 약간 존재, 
+ - ios용 multi-modal (our): 거의 모든 객체 검출
+ - ios용 multi-modal with points (our): Points를 활용한 정확하게 사용자가 원하는 하나의 객체 검출
 
 <p align="center">
 <img src="https://github.com/Jung-Jun-Uk/Jung-Jun-Uk.github.io/releases/download/gif.file/od_ultralytics.gif" 
